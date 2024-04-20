@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Osprey TDD Framework Final Project">
+    <test name="Running With Package">
+        <packages>
+            <package name="tek.tdd.test"/>
+        </packages>
+    </test>
+</suite>
