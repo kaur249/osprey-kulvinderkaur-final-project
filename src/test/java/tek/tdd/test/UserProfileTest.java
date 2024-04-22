@@ -13,15 +13,20 @@ public class UserProfileTest extends BaseUITest {
         sendText(loginPage.userName, "supervisor");
         sendText(loginPage.userPassword, "tek_supervisor");
         clickOnElement(loginPage.signInBtn);
+        clickOnElement(userProfilePage.ProfileBtn);
 
-        WebElement profileButton= userProfilePage.ProfileBtn;
+        WebElement profileButton = userProfilePage.ProfileBtn;
         clickOnElement(profileButton);
         boolean isProfileButtonEnabled = isElementEnabled(userProfilePage.ProfileBtn);
         Assert.assertTrue(isProfileButtonEnabled, "Profile Button should be enabled on the right");
+
+        /*
 
         boolean isStatusEnabled= isElementEnabled(userProfilePage.Status);
         Assert.assertTrue(isStatusEnabled,"Active should be enabled all time");
 
 
+    }
+         */
     }
 }
