@@ -37,13 +37,10 @@ public class CreateAccountPage extends SeleniumUtilities {
     public WebElement DateOfBirth;
     @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div/div/form/div/div[2]/button[1]")
     public WebElement CreateAccountSubmitButton;
-    ///html/body/div[1]/div/div[2]/div/div/div/form/div/div[2]/button[1]
-
     @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div/div/div/h2[1]")
     public static WebElement SignUpYourAccountPage;
 
-    @FindBy(xpath = "<h2 class=\"chakra-heading css-18j379d\">kaur1619@gmail.com</h2>")
-    //@FindBy(xpath = "//h2[@class='chakra-heading css-18j379d']")
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div/div/h2[3]")
     public static WebElement validateEmailAddressAsExpected;
 
     @FindBy(xpath =  "//div[@class='chakra-alert banner-error css-1ykemat']")

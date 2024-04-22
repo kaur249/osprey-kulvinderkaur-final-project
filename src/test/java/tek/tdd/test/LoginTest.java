@@ -26,21 +26,22 @@ public class LoginTest extends BaseUITest {
         sendText(loginPage.userPassword, "tek_supervisor");
         clickOnElement(loginPage.signInBtn);
 
+        String expectedErrorMessage= "User wrong not found";
         String actualErrorMessage = getElementText(loginPage.UserWrongNotFound);
-        String expectedErrorMessage = "ERROR\n" +
-                "User wrong not found";
-        Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "The expected username error message should match the actual error message");
+        String deletedErrorText= actualErrorMessage.replace("ERROR","").trim();
+        Assert.assertEquals(deletedErrorText,expectedErrorMessage,"User wrong not found");
+    }
 
-        /*@Test
+        @Test
         public void testWrongPasswordErrorMessage() {
             clickOnElement(loginPage.loginBtn);
             sendText(loginPage.userName, "supervisor");
             sendText(loginPage.userPassword, "wrong_supervisor");
             clickOnElement(loginPage.signInBtn);
+            //Password not matched
+            String expectedErrorMessage= "Password not matched";
             String actualErrorMessage = getElementText(loginPage.PasswordNotMatched);
-            String expectedErrorMessage = "ERROR\nPassword not matched";
-            Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "The expected password error message should match the actual error message");
-
-         */
+            String deletedErrorText= actualErrorMessage.replace("ERROR","").trim();
+            Assert.assertEquals(deletedErrorText,expectedErrorMessage,"Password not matched");
         }
         }

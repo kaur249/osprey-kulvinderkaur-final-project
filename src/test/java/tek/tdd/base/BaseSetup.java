@@ -80,7 +80,7 @@ public class BaseSetup {
         driver.quit();
     }
 
-    public static WebDriver getDriver(){
+    public WebDriver getDriver(){
         return driver;
     }
 }

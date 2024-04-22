@@ -51,10 +51,10 @@ public class SeleniumUtilities extends BaseSetup {
     }
 
     // Select By Visible Text
-    public void selectFromDropDown(WebElement element, String visivleText){
+    public void selectFromDropDown(WebElement element, String visibleText){
         WebElement selectElement= waitForVisibility(element);
         Select select= new Select(selectElement);
-        select.selectByVisibleText(visivleText);
+        select.selectByVisibleText(visibleText);
     }
 
 
