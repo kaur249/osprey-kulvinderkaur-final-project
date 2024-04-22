@@ -22,6 +22,9 @@ public class HomePage extends SeleniumUtilities {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div/div/h2[1]")
     public WebElement LetsGetYouStartedButton;
 
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div/div/a")
+    public WebElement createPrimaryAccountButton;
+
 
 
 

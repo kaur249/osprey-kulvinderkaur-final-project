@@ -32,11 +32,10 @@ public class BaseUITest extends SeleniumUtilities {
         userProfilePage= new UserProfilePage();
         plansPage= new PlansPage();
         accountsPage= new AccountsPage();
-        // May be add a sign page (depends)
     }
 
     @AfterMethod
-    public void endTestMethod(ITestResult result){
+    public void endTestMethod(ITestResult result) throws InterruptedException{
         if(result.getStatus() == ITestResult.FAILURE){
             TakesScreenshot takesScreenshot= (TakesScreenshot) getDriver();
             String screenshot= takesScreenshot.getScreenshotAs(OutputType.BASE64);

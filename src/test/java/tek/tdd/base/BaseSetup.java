@@ -75,7 +75,7 @@ public class BaseSetup {
     
     // closing the browser
     public void quitBrowser(){
-    LOGGER.debug("Closing Browser");
+    LOGGER.debug("Quit Browser");
     if(driver !=null)
         driver.quit();
     }
