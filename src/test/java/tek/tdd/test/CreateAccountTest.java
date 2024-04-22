@@ -24,7 +24,7 @@ public class CreateAccountTest extends BaseUITest {
     @Test
     public void ClickOnCreateAccountButtonCompleteTheFillUpFormAndSubmitButtonAndValidateAsExpected() {
         clickOnElement(homepage.createPrimaryAccountButton);
-        sendText(createAccountPage.EmailAddress, "kaur6119@gmail.com");
+        sendText(createAccountPage.EmailAddress, "kaur1619@gmail.com");
         selectFromDropDown(createAccountPage.Title, "Ms.");
         sendText(createAccountPage.FirstName, "Kulvinder");
         sendText(createAccountPage.LastName, "Kaur");
@@ -35,19 +35,20 @@ public class CreateAccountTest extends BaseUITest {
         clickOnElement(createAccountPage.CreateAccountSubmitButton);
 
         boolean isSignUpYourAccountPageDisplayed = isElementDisplayed(CreateAccountPage.SignUpYourAccountPage);
-        Assert.assertTrue(isSignUpYourAccountPageDisplayed);
+        Assert.assertTrue(isSignUpYourAccountPageDisplayed, "Sign up you account page should be displayed");
 
-        String expectedEmail = "Hejaz0984@gmail.com";
+
+        String expectedEmail = "kaur1619@gmail.com";
         String actualEmail = getElementText(CreateAccountPage.validateEmailAddressAsExpected);
-        Assert.assertEquals(actualEmail,expectedEmail,
-                "The expected email should be same as the actual email");
+        Assert.assertEquals(actualEmail, expectedEmail,
+                "The expected email should match the actual email");
 
     }
 
     @Test
     public void ValidateErrorMessageAsExpected() {
         clickOnElement(homepage.createPrimaryAccountButton);
-        sendText(createAccountPage.EmailAddress, "kaur1119@gmail.com");
+        sendText(createAccountPage.EmailAddress, "kaur1619@gmail.com");
         selectFromDropDown(createAccountPage.Title, "Ms.");
         sendText(createAccountPage.FirstName, "Kulvinder");
         sendText(createAccountPage.LastName, "Kaur");
@@ -57,7 +58,7 @@ public class CreateAccountTest extends BaseUITest {
         sendText(createAccountPage.DateOfBirth, "02/09/2000");
         clickOnElement(createAccountPage.CreateAccountSubmitButton);
 
-        String expectedErrorMessage = "Account with email kaur1119@gmail.com is exist";
+        String expectedErrorMessage = "Account with email kaur1619@gmail.com is exist";
         String actualErrorMessage = getElementText(createAccountPage.errorMessageAsExpected);
         String deletedErrorText = actualErrorMessage.replace("ERROR","").trim();
         Assert.assertEquals(deletedErrorText,expectedErrorMessage,

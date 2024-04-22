@@ -1,8 +1,20 @@
 package tek.tdd.page;
 
-public class UserProfilePage {
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import tek.tdd.utilities.SeleniumUtilities;
 
-    // Check if I need this page
+public class UserProfilePage extends SeleniumUtilities {
+
+    public UserProfilePage() {
+        PageFactory.initElements(getDriver(),this);}
+
+    @FindBy (xpath = "/html/body/div[1]/div/div[1]/div/button/svg/path[1]")
+    public WebElement ProfileButton;
 
 
-}
+
+    }
+
+

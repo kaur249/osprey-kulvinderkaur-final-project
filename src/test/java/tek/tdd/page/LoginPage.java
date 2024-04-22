@@ -9,7 +9,7 @@ public class LoginPage extends SeleniumUtilities {
     public LoginPage(){
         PageFactory.initElements(getDriver(),this);
     }
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div/div/div/h2]")
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div/a[2]")
     public WebElement loginBtn;
     @FindBy(name = "username")
     public WebElement userName;
@@ -19,4 +19,9 @@ public class LoginPage extends SeleniumUtilities {
     public WebElement signInBtn;
     @FindBy(xpath = "//h2[@class='chakra-heading css-1at26de']")
     public WebElement customerServicePortalPage;
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div/div/div/div/div")
+    public WebElement UserWrongNotFound;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div/div/div/div/div")
+    public WebElement PasswordNotMatched;
 }
