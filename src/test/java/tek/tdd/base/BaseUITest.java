@@ -36,7 +36,6 @@ public class BaseUITest extends SeleniumUtilities {
 
     @AfterMethod
     public void endTestMethod(ITestResult result) throws InterruptedException{
-        Thread.sleep(5000);
         if(result.getStatus() == ITestResult.FAILURE){
             TakesScreenshot takesScreenshot= (TakesScreenshot) getDriver();
             String screenshot= takesScreenshot.getScreenshotAs(OutputType.BASE64);
