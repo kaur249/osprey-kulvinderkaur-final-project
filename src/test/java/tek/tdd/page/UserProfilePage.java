@@ -13,7 +13,7 @@ public class UserProfilePage extends SeleniumUtilities {
     @FindBy (xpath = "/html/body/div[1]/div/div[1]/div/button")
     public WebElement ProfileBtn;
 
-    @FindBy(xpath = "//*[@id=\"chakra-modal--body-:r4e:\"]/div/div/div[1]/p[2]/span/span")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/div/div/div/div/div[1]/p[1]")
     public WebElement Status;
 
     @FindBy(xpath = "/html/body/div[3]/div[3]/div/div/div/div/div/div[2]/p[1]")
@@ -30,7 +30,10 @@ public class UserProfilePage extends SeleniumUtilities {
 
     @FindBy(xpath = "/html/body/div[3]/div[3]/div/div/footer/div/button[1]")
     public WebElement LogoutBtn;
-//
+
+
+
+
 
 
     }

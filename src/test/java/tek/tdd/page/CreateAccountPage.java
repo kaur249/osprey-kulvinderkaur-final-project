@@ -13,24 +13,18 @@ public class CreateAccountPage extends SeleniumUtilities {
 
     @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div/div/div/h2")
     public WebElement TitleAsCreatePrimaryAccountHolder;
-
     @FindBy(name = "email")
     public WebElement EmailAddress;
-
     @FindBy(id = "title")
     public WebElement Title;
-
     @FindBy(name = "firstName")
     public WebElement FirstName;
-
-
     @FindBy(name = "lastName")
     public  WebElement LastName;
     @FindBy(id = "gender")
     public WebElement Gender;
     @FindBy(id = "maritalStatus")
     public WebElement MaritalStatus;
-
     @FindBy(name = "employmentStatus")
     public WebElement EmploymentStatus;
     @FindBy(name = "dateOfBirth")

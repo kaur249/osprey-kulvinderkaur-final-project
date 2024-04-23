@@ -1,4 +1,6 @@
 package tek.tdd.page;
 
-public class PlansPage {
+import tek.tdd.utilities.SeleniumUtilities;
+
+public class PlansPage extends SeleniumUtilities {
 }

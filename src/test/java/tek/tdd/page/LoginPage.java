@@ -21,7 +21,6 @@ public class LoginPage extends SeleniumUtilities {
     public WebElement customerServicePortalPage;
     @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div/div/div/div/div")
     public WebElement UserWrongNotFound;
-
     @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div/div/div/div/div")
     public WebElement PasswordNotMatched;
 }

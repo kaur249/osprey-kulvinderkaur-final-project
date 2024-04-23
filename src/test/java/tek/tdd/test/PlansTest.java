@@ -1,4 +1,6 @@
 package tek.tdd.test;
 
-public class PlansTest {
+import tek.tdd.base.BaseUITest;
+
+public class PlansTest extends BaseUITest {
 }
