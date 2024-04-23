@@ -15,6 +15,9 @@ public class UserProfileTest extends BaseUITest {
         clickOnElement(loginPage.signInBtn);
         clickOnElement(userProfilePage.ProfileBtn);
 
+        boolean isProfileHeaderDisplayed= isElementDisplayed(userProfilePage.profileHeader);
+        Assert.assertTrue(isProfileHeaderDisplayed);
+
         String expectedStatus = "Active";
         String actualStatus = getElementText(userProfilePage.Status);
         Assert.assertEquals(actualStatus, expectedStatus, "Active should be displayed");

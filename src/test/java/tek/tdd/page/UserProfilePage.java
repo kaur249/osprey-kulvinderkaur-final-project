@@ -10,10 +10,11 @@ public class UserProfilePage extends SeleniumUtilities {
     public UserProfilePage() {
         PageFactory.initElements(getDriver(),this);}
 
-    @FindBy (xpath = "/html/body/div[1]/div/div[1]/div/button")
+    @FindBy (xpath = "/html/body/div[1]/div/div[1]/div/button/svg/path[2]")
     public WebElement ProfileBtn;
-
-    @FindBy(xpath = "/html/body/div[3]/div[3]/div/div/div/div/div/div[1]/p[1]")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/div/header")
+    public WebElement profileHeader;
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/div/div/div/div/div[1]")
     public WebElement Status;
 
     @FindBy(xpath = "/html/body/div[3]/div[3]/div/div/div/div/div/div[2]/p[1]")
