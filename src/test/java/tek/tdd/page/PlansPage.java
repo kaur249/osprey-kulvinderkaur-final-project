@@ -22,4 +22,10 @@ public class PlansPage extends SeleniumUtilities {
     public WebElement rentersPlanType;
     @FindBy(xpath = "/html/body/div[1]/div/div[3]/div/div/div/div/table/tbody/tr[4]/td[2]")
     public WebElement autoPlanType;
+
+    @FindBy(xpath = "/html/body/div[1]/div/div[3]/div/div/div/div/table/tbody/tr[1]/td[4]")
+    public WebElement dateCreated;
+
+    @FindBy(xpath = "/html/body/div[1]/div/div[3]/div/div/div/div/table/tbody/tr[1]/td[5]")
+    public WebElement dateExpired;
 }

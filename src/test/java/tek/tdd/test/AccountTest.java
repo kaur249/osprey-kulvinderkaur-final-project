@@ -1,4 +1,11 @@
 package tek.tdd.test;
 
-public class AccountTest {
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import tek.tdd.base.BaseUITest;
+
+import java.util.List;
+
+public class AccountTest extends BaseUITest {
+
 }
