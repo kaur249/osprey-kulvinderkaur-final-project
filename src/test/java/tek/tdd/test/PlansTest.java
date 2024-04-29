@@ -44,11 +44,11 @@ public class PlansTest extends BaseUITest {
         clickOnElement(plansPage.plansButton);
 
         String actualDateCreated = getElementText(plansPage.dateCreated);
-        String expectedDateCreated = "April 23, 2024";
+        String expectedDateCreated = "April 29, 2024";
         Assert.assertEquals(actualDateCreated, expectedDateCreated, "Date created should match Today's Date");
 
         String actualDateExpired = getElementText(plansPage.dateExpired);
-        String expectedDateExpired = "April 24, 2024";
+        String expectedDateExpired = "April 30, 2024";
         Assert.assertEquals(actualDateExpired, expectedDateExpired, "Date expire should be day after");
 
     }
