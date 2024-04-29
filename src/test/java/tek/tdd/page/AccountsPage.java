@@ -22,19 +22,18 @@ public class AccountsPage extends SeleniumUtilities {
     @FindBy(xpath = "/html/body/div[1]/div/div[3]/div/div/div/div[2]/div/div/div[3]/select")
     public WebElement accountRows10;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div[3]/div/div/div/div[2]/table")
-    ///html/body/div[1]/div/div[3]/div/div/div/div[2]/table/thead
+    @FindBy(xpath = "//tr[@class= 'css-0']")
     public List<WebElement> recordPageTen;
     @FindBy(xpath = "/html/body/div[1]/div/div[3]/div/div/div/div[2]/div/div/div[3]/select")
     public WebElement accountRow25;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div[3]/div/div/div/div[2]/table/thead/tr")
+    @FindBy(xpath = "//tr[@class= 'css-0']")
     public List<WebElement> recordPageTwentyFive;
 
     @FindBy(xpath = "/html/body/div[1]/div/div[3]/div/div/div/div[2]/div/div/div[3]/select")
     public WebElement accountRow50;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div[3]/div/div/div/div[2]/table/thead/tr")
+    @FindBy(xpath = "//tr[@class= 'css-0']")
     public List<WebElement> recordPageFifty;
 
     public int countRecordPageTen() {return recordPageTen.size();

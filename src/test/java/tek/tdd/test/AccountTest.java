@@ -32,7 +32,7 @@ public class AccountTest extends BaseUITest {
         selectFromDropDown(accountsPage.accountRows10, "Show 10");
         int recordCount = accountsPage.countRecordPageTen();
         recordCount--;
-        int actualRecord=recordCount;
+        int actualRecord = recordCount;
         int expectedRecord = 10;
         Assert.assertEquals(actualRecord, expectedRecord);
     }
@@ -49,7 +49,7 @@ public class AccountTest extends BaseUITest {
         recordCountOne--;
         int actualRecordOne = recordCountOne;
         int expectedRecordOne = 25;
-        Assert.assertEquals(actualRecordOne,expectedRecordOne);
+        Assert.assertEquals(actualRecordOne, expectedRecordOne);
     }
 
     @Test
@@ -61,9 +61,10 @@ public class AccountTest extends BaseUITest {
         clickOnElement(accountsPage.accountButton);
         selectFromDropDown(accountsPage.accountRow50, "Show 50");
         int recordCountTwo = accountsPage.countRecordPageFifty();
-        recordCountTwo;
+        recordCountTwo--;
         int actualRecordTwo = recordCountTwo;
         int expectedRecordTwo = 50;
         Assert.assertEquals(actualRecordTwo, expectedRecordTwo);
     }
 }
+
