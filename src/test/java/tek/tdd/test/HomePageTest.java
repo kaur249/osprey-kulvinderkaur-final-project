@@ -16,10 +16,6 @@ public class HomePageTest extends BaseUITest {
 
     @Test
     public void CreatePrimaryAccount(){
-        /*boolean isDisplayed= isElementDisplayed(homepage.CreatePrimaryAccountButton);
-        Assert.assertTrue(isDisplayed,
-                "Create Primary Account Button should be displayed");
-         */
         String expectedTitle = "Create Primary Account";
         String actualTitle = getElementText(homepage.CreatePrimaryAccount);
         Assert.assertEquals(actualTitle, expectedTitle, "The expected should be displayed");

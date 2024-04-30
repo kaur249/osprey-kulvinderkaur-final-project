@@ -6,8 +6,6 @@ import tek.tdd.base.BaseUITest;
 import tek.tdd.page.CreateAccountPage;
 import tek.tdd.page.EmailGenerator;
 
-import java.util.Random;
-
 public class CreateAccountTest extends BaseUITest {
 
     @Test
@@ -43,7 +41,6 @@ public class CreateAccountTest extends BaseUITest {
         boolean isSignUpYourAccountPageDisplayed = isElementDisplayed(CreateAccountPage.SignUpYourAccountPage);
         Assert.assertTrue(isSignUpYourAccountPageDisplayed, "Sign up you account page should be displayed");
 
-
         String expectedEmail = randomEmail;
         String actualEmail = getElementText(CreateAccountPage.validateEmailAddressAsExpected);
         Assert.assertEquals(actualEmail, expectedEmail,
@@ -71,4 +68,4 @@ public class CreateAccountTest extends BaseUITest {
                 "The expected error message should be same as actual error message");
     }
 
-    }
+}

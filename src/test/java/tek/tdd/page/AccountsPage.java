@@ -15,7 +15,6 @@ public class AccountsPage extends SeleniumUtilities {
     }
 
     @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div/a[1]")
-    ////*[@id="root"]/div/div[2]/div/div/a[1]
     public WebElement accountButton;
 
     @FindBy(xpath = "/html/body/div[1]/div/div[3]/div/div/div/div[2]/div/div/div[3]/select/option[1]")

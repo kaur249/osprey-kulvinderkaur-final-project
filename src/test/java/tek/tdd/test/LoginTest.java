@@ -38,6 +38,7 @@ public class LoginTest extends BaseUITest {
             sendText(loginPage.userName, "supervisor");
             sendText(loginPage.userPassword, "wrong_supervisor");
             clickOnElement(loginPage.signInBtn);
+
             //Password not matched
             String expectedErrorMessage= "Password not matched";
             String actualErrorMessage = getElementText(loginPage.PasswordNotMatched);
