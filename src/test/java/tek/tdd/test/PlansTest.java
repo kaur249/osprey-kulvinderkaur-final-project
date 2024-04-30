@@ -46,8 +46,8 @@ public class PlansTest extends BaseUITest {
         clickOnElement(loginPage.signInBtn);
         clickOnElement(plansPage.plansButton);
 
-        LocalDate currentDate= LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
+        LocalDate currentDate = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
         String formattedCurrentDate = currentDate.format(formatter);
 
         String actualDateCreated = getElementText(plansPage.dateCreated);
