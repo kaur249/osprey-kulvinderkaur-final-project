@@ -4,9 +4,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import tek.tdd.base.BaseUITest;
 import tek.tdd.page.CreateAccountPage;
-import tek.tdd.page.EmailGenerator;
+import tek.tdd.utilities.DataGenerator;
 
 public class CreateAccountTest extends BaseUITest {
+
+    String generateRandomEmail;
+    private Object emailGenerator;
 
     @Test
     public void clickOnCreatePrimaryAccountButton() {
@@ -24,11 +27,10 @@ public class CreateAccountTest extends BaseUITest {
 
     @Test
     public void ClickOnCreateAccountButtonCompleteTheFillUpFormAndSubmitButtonAndValidateAsExpected() {
-        EmailGenerator emailGenerator= new EmailGenerator();
-        String randomEmail= emailGenerator.generateRandomEmail();
+        generateRandomEmail= DataGenerator.randomEmail();
         clickOnElement(homepage.createPrimaryAccountButton);
-        sendText(createAccountPage.EmailAddress,randomEmail);
-        // sendText(createAccountPage.EmailAddress, "kaurk169@gmail.com");
+        sendText(createAccountPage.EmailAddress,generateRandomEmail);
+        // sendText(createAccountPage.EmailAddress, "kaur.k_3653@gmail.com.com");
         selectFromDropDown(createAccountPage.Title, "Ms.");
         sendText(createAccountPage.FirstName, "Kulvinder");
         sendText(createAccountPage.LastName, "Kaur");
@@ -41,7 +43,7 @@ public class CreateAccountTest extends BaseUITest {
         boolean isSignUpYourAccountPageDisplayed = isElementDisplayed(CreateAccountPage.SignUpYourAccountPage);
         Assert.assertTrue(isSignUpYourAccountPageDisplayed, "Sign up you account page should be displayed");
 
-        String expectedEmail = randomEmail;
+        String expectedEmail = generateRandomEmail;
         String actualEmail = getElementText(CreateAccountPage.validateEmailAddressAsExpected);
         Assert.assertEquals(actualEmail, expectedEmail,
                 "The expected email should match the actual email");
@@ -51,7 +53,7 @@ public class CreateAccountTest extends BaseUITest {
     @Test
     public void ValidateErrorMessageAsExpected() {
         clickOnElement(homepage.createPrimaryAccountButton);
-        sendText(createAccountPage.EmailAddress, "kaurk169@gmail.com");
+        sendText(createAccountPage.EmailAddress, "kaur.k_3653@gmail.com");
         selectFromDropDown(createAccountPage.Title, "Ms.");
         sendText(createAccountPage.FirstName, "Kulvinder");
         sendText(createAccountPage.LastName, "Kaur");
@@ -61,7 +63,7 @@ public class CreateAccountTest extends BaseUITest {
         sendText(createAccountPage.DateOfBirth, "02/09/2000");
         clickOnElement(createAccountPage.CreateAccountSubmitButton);
 
-        String expectedErrorMessage = "Account with email kaurk169@gmail.com is exist";
+        String expectedErrorMessage = "Account with email kaur.k_3653@gmail.com is exist";
         String actualErrorMessage = getElementText(createAccountPage.errorMessageAsExpected);
         String deletedErrorText = actualErrorMessage.replace("ERROR","").trim();
         Assert.assertEquals(deletedErrorText,expectedErrorMessage,
