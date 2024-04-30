@@ -6,12 +6,14 @@ import org.openqa.selenium.support.PageFactory;
 import tek.tdd.utilities.SeleniumUtilities;
 
 import java.util.List;
+import java.util.Random;
 
 public class AccountsPage extends SeleniumUtilities {
 
     public AccountsPage() {
         PageFactory.initElements(getDriver(), this);
     }
+
     @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div/a[1]")
     ////*[@id="root"]/div/div[2]/div/div/a[1]
     public WebElement accountButton;
@@ -36,10 +38,15 @@ public class AccountsPage extends SeleniumUtilities {
     @FindBy(xpath = "//tr[@class= 'css-0']")
     public List<WebElement> recordPageFifty;
 
-    public int countRecordPageTen() {return recordPageTen.size();
+    public int countRecordPageTen() {
+        return recordPageTen.size();
     }
-    public int countRecordPageTwentyFive(){ return recordPageTwentyFive.size();
+
+    public int countRecordPageTwentyFive() {
+        return recordPageTwentyFive.size();
     }
-    public int countRecordPageFifty(){ return recordPageFifty.size();
+
+    public int countRecordPageFifty() {
+        return recordPageFifty.size();
     }
 }

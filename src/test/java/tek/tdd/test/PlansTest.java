@@ -4,6 +4,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import tek.tdd.base.BaseUITest;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class PlansTest extends BaseUITest {
     @Test
     public void NavigateToCustomerServicePortalAndThenNavigateToPlanPage() {
@@ -43,7 +46,17 @@ public class PlansTest extends BaseUITest {
         clickOnElement(loginPage.signInBtn);
         clickOnElement(plansPage.plansButton);
 
+        LocalDate currentDate= LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
         String actualDateCreated = getElementText(plansPage.dateCreated);
+        Assert.assertEquals(actualDateCreated, currentDate.format(formatter), "Date created should match Today's Date");
+
+        LocalDate dateAfterCurrent = currentDate.plusDays(1);
+        String actualDateExpired = getElementText(plansPage.dateExpired);
+        Assert.assertEquals(actualDateExpired, dateAfterCurrent.format(formatter), "Date expire should be day after");
+    }
+
+        /*String actualDateCreated = getElementText(plansPage.dateCreated);
         String expectedDateCreated = "April 29, 2024";
         Assert.assertEquals(actualDateCreated, expectedDateCreated, "Date created should match Today's Date");
 
@@ -51,5 +64,7 @@ public class PlansTest extends BaseUITest {
         String expectedDateExpired = "April 30, 2024";
         Assert.assertEquals(actualDateExpired, expectedDateExpired, "Date expire should be day after");
 
+         */
+
     }
-}
+

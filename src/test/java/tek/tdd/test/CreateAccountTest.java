@@ -4,6 +4,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import tek.tdd.base.BaseUITest;
 import tek.tdd.page.CreateAccountPage;
+import tek.tdd.page.EmailGenerator;
+
+import java.util.Random;
 
 public class CreateAccountTest extends BaseUITest {
 
@@ -23,8 +26,11 @@ public class CreateAccountTest extends BaseUITest {
 
     @Test
     public void ClickOnCreateAccountButtonCompleteTheFillUpFormAndSubmitButtonAndValidateAsExpected() {
+        EmailGenerator emailGenerator= new EmailGenerator();
+        String randomEmail= emailGenerator.generateRandomEmail();
         clickOnElement(homepage.createPrimaryAccountButton);
-        sendText(createAccountPage.EmailAddress, "kaurk169@gmail.com");
+        sendText(createAccountPage.EmailAddress,randomEmail);
+        // sendText(createAccountPage.EmailAddress, "kaurk169@gmail.com");
         selectFromDropDown(createAccountPage.Title, "Ms.");
         sendText(createAccountPage.FirstName, "Kulvinder");
         sendText(createAccountPage.LastName, "Kaur");
@@ -38,7 +44,7 @@ public class CreateAccountTest extends BaseUITest {
         Assert.assertTrue(isSignUpYourAccountPageDisplayed, "Sign up you account page should be displayed");
 
 
-        String expectedEmail = "kaurk169@gmail.com";
+        String expectedEmail = randomEmail;
         String actualEmail = getElementText(CreateAccountPage.validateEmailAddressAsExpected);
         Assert.assertEquals(actualEmail, expectedEmail,
                 "The expected email should match the actual email");
