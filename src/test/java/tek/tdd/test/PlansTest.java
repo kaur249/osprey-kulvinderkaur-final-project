@@ -47,6 +47,25 @@ public class PlansTest extends BaseUITest {
         clickOnElement(plansPage.plansButton);
 
         LocalDate currentDate = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
+        String formattedCurrentDate = currentDate.format(formatter);
+
+        String actualDateCreated = getElementText(plansPage.dateCreated);
+        Assert.assertEquals(actualDateCreated, formattedCurrentDate, "Date created should match Today's Date");
+
+        // Assert that the expiration date is April 30
+        LocalDate dateAfterCurrent = currentDate;
+        String formattedDateAfterCurrent = dateAfterCurrent.format(formatter);
+        String actualDateExpired = getElementText(plansPage.dateCreated);
+        Assert.assertEquals(actualDateExpired, formattedDateAfterCurrent, "Date expire should be day after");
+
+        // Assert that the second expiration date is May 1
+        LocalDate dateAfterTwoDays = currentDate.plusDays(1);
+        String formattedDateAfterTwoDays = dateAfterTwoDays.format(formatter);
+        String actualDateExpiredTwoDays = getElementText(plansPage.dateExpired);
+        Assert.assertEquals(actualDateExpiredTwoDays, formattedDateAfterTwoDays, "Second expiration date should be two days after");
+
+        /*LocalDate currentDate = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
         String formattedCurrentDate = currentDate.format(formatter);
 
@@ -57,6 +76,8 @@ public class PlansTest extends BaseUITest {
         String formattedDateAfterCurrent = dateAfterCurrent.format(formatter);
         String actualDateExpired = getElementText(plansPage.dateExpired);
         Assert.assertEquals(actualDateExpired, formattedDateAfterCurrent, "Date expire should be day after");
+
+         */
     }
 
         /*String actualDateCreated = getElementText(plansPage.dateCreated);
@@ -65,7 +86,8 @@ public class PlansTest extends BaseUITest {
 
         String actualDateExpired = getElementText(plansPage.dateExpired);
         String expectedDateExpired = "April 30, 2024";
-        Assert.assertEquals(actualDateExpired, expectedDateExpired, "Date expire should be day after");
+        Assert.assertEquals(actualDateExpired, expectedDateExpired,
+         "Date expire should be day after");
 
          */
 
