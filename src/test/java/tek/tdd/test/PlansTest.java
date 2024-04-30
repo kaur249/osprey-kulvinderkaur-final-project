@@ -49,8 +49,10 @@ public class PlansTest extends BaseUITest {
         LocalDate currentDate= LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
         String formattedCurrentDate = currentDate.format(formatter);
+
         String actualDateCreated = getElementText(plansPage.dateCreated);
         Assert.assertEquals(actualDateCreated, formattedCurrentDate, "Date created should match Today's Date");
+
         LocalDate dateAfterCurrent = currentDate.plusDays(1);
         String formattedDateAfterCurrent = dateAfterCurrent.format(formatter);
         String actualDateExpired = getElementText(plansPage.dateExpired);
